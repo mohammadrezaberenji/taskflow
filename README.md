@@ -148,5 +148,3 @@ Serving the production build (e.g. with Nginx) needs two things:
 
 Developed for **Hamrah Academy DevOps Bootcamp**.
 
-**Maintainer:** Hassan Rahnama
-[Email](mailto:hassan.rahnama.1@gmail.com)
