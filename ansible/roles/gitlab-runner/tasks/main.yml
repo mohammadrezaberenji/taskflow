@@ -1,0 +1,13 @@
+- name: Create Gitlab Runner directory
+  become: true
+  ansible.builtin.file:
+    path: /opt/gitlab-runner
+    state: directory
+    mode: '0755'
+
+- name: Render and validate Gitlab Runner Compose file 
+  ansible.builtin.template:
+    src: docker-compose.yml.j2
+    dest: /opt/gitlab-runner/compose.yml
+    mode: '0644'
+    validate: 'docker compose --project-name gitlab-runner -f %s config --quiet'

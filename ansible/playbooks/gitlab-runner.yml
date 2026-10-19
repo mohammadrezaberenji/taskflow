@@ -1,0 +1,7 @@
+---
+- name: Gitlab Runner Installation
+  hosts: devops_server
+  become: true
+
+  roles:
+    - gitlab-runner

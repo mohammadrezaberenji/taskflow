@@ -1,0 +1,17 @@
+---
+
+gitlab_runner_owner: "{{ ansible_user }}"
+gitlab_runner_owner_home: "/home/{{ gitlab_runner_owner }}"
+
+gitlab_runner_dir: "{{ gitlab_runner_owner_home}}/gitlab-runner"
+
+gitlab_runner_image: "gitlab/gitlab-runner:alpine-v18.10.1"
+
+gitlab_runner_container_name: "gitlab-runner"
+gitlab_runner_restart_policy: "unless-stopped"
+
+gitlab_runner_compose_file: "{{ gitlab_runner_dir }}/compose.yml"
+gitlab_runner_config_volume: "gitlab-runner-config"
+gitlab_runner_docker_socket: "/var/run/docker.sock"
+
+

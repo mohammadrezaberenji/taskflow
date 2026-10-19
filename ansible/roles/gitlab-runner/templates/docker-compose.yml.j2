@@ -1,0 +1,14 @@
+services:
+  gitlab-runner:
+    image: "{{ gitlab_runner_image }}"
+    container_name: "{{ gitlab_runner_container_name }}"
+    restart: "{{ gitlab_runner_restart_policy }}"
+        
+    
+    volumes: 
+      - "{{ gitlab_runner_config_volume }}:/etc/gitlab-runner"
+      - "{{ gitlab_runner_docker_socket }}:/var/run/docker.sock"
+
+volumes:
+  "{{ gitlab_runner_config_volume }}": {}
+
