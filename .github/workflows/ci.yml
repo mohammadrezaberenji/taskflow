@@ -1,0 +1,21 @@
+name: Verify self-hosted runenr 
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+permissions:
+  contents: read
+
+jobs:
+  verify-runner:
+    runs-on: [self-hosted, linux, x64, docker-ci]
+    steps:
+      - name: Checkout repository and clone
+        uses: actions/checkout@v6
+      - name: Verify Docker access
+        run: |
+          docker version
+          docker info
